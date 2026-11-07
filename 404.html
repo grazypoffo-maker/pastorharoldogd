@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="noindex">
+    <title>Página não encontrada - Pastor Haroldo Lopes Morais</title>
+    <!-- O GitHub Pages serve esta página em qualquer endereço inexistente; o <base> garante que CSS, JS e links encontrem os arquivos do site -->
+    <script>
+        (function () {
+            if (location.protocol === 'file:') { return; }
+            var partes = location.pathname.split('/');
+            var base = (/\.github\.io$/.test(location.hostname) && partes[1]) ? '/' + partes[1] + '/' : '/';
+            var tag = document.createElement('base');
+            tag.href = base;
+            document.head.appendChild(tag);
+        })();
+    </script>
+    <script>
+        (function () {
+            var tema = null;
+            try { tema = localStorage.getItem('ieadb-tema'); } catch (e) {}
+            if (tema !== 'dark' && tema !== 'light') {
+                tema = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-tema', tema);
+        })();
+    </script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/404.css">
+</head>
+<body class="erro404">
+    <div class="erro404-pagina gradiente-ui">
+        <div class="erro404-toggle" data-tema-toggle></div>
+
+        <div class="tv404-palco" aria-hidden="true">
+            <div class="tv404-conjunto">
+                <div class="tv404-antena">
+                    <div class="tv404-antena-sombra"></div>
+                    <div class="tv404-haste1"></div>
+                    <div class="tv404-ponta1"></div>
+                    <div class="tv404-haste2"></div>
+                    <div class="tv404-ponta2"></div>
+                </div>
+                <div class="tv404-aparelho">
+                    <div class="tv404-curva">
+                        <svg class="tv404-curva-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189.929 189.929" focusable="false">
+                            <path d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z"></path>
+                        </svg>
+                    </div>
+                    <div class="tv404-visor">
+                        <div class="tv404-tela-ext">
+                            <div class="tv404-tela-int">
+                                <div class="tv404-tela-ruido">
+                                    <span class="tv404-texto">NÃO ENCONTRADA</span>
+                                </div>
+                                <div class="tv404-tela-cores">
+                                    <span class="tv404-texto">NÃO ENCONTRADA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tv404-linhas">
+                        <div class="tv404-linha-1"></div>
+                        <div class="tv404-linha-2"></div>
+                        <div class="tv404-linha-3"></div>
+                    </div>
+                    <div class="tv404-painel">
+                        <div class="tv404-botao-1"><span class="tv404-botao-traco"></span></div>
+                        <div class="tv404-botao-2"></div>
+                        <div class="tv404-alto-falantes">
+                            <div class="tv404-furos">
+                                <div class="tv404-furo"></div>
+                                <div class="tv404-furo"></div>
+                                <div class="tv404-furo"></div>
+                            </div>
+                            <div class="tv404-trilho"></div>
+                            <div class="tv404-trilho"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tv404-base">
+                    <div class="tv404-pe-1"></div>
+                    <div class="tv404-pe-2"></div>
+                    <div class="tv404-barra"></div>
+                </div>
+            </div>
+            <div class="tv404-numero">
+                <div class="tv404-digito">4</div>
+                <div class="tv404-digito">0</div>
+                <div class="tv404-digito">4</div>
+            </div>
+        </div>
+
+        <main class="erro404-conteudo">
+            <h1 class="entrada" style="--d: 0.1s">Página não encontrada</h1>
+            <p class="entrada" style="--d: 0.2s">O endereço acessado não existe ou foi removido.</p>
+            <a class="nav-button entrada" style="--d: 0.3s" href="index.html">Voltar para o início</a>
+        </main>
+    </div>
+
+    <script src="js/comum.js"></script>
+</body>
+</html>
