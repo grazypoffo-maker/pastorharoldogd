@@ -1,0 +1,544 @@
+/* Página 404: televisão animada (adaptada do Uiverse.io, by Praashoo7) com cores da igreja */
+
+.gradiente-ui {
+    background: linear-gradient(60deg, var(--cabecalho-1) 0%, var(--cabecalho-2) 100%);
+}
+
+body.erro404 {
+    overflow-x: hidden;
+}
+
+.erro404-pagina {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4.5rem 1rem 2.5rem;
+}
+
+.erro404-toggle {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 5;
+}
+
+.erro404-conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 34rem;
+    margin-top: -4rem;
+    text-align: center;
+}
+
+.erro404-conteudo h1 {
+    margin-bottom: 0.75rem;
+    font-size: 2.2rem;
+    color: var(--destaque);
+}
+
+.erro404-conteudo p {
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    color: var(--texto-sec);
+}
+
+/* Televisão */
+.tv404-palco {
+    --tv-corpo: #2d5a3d;
+    --tv-luz: #5fa97a;
+    --tv-escuro: #0f2418;
+    --tv-antena: #3f7a55;
+    --tv-antena-sombra: #1e3d29;
+    --tv-antena-brilho: #8fd0a5;
+    --tv-botao: #1e3d29;
+    --tv-botao-luz: #7fb593;
+    --tv-botao-sombra: #12281b;
+    --tv-apoio: #4d4d4d;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30em;
+    height: 30em;
+    font-size: clamp(9px, 3.2vw, 16px);
+    pointer-events: none;
+}
+
+:root[data-tema="dark"] .tv404-palco {
+    --tv-corpo: #3a7a54;
+    --tv-luz: #6fbf8c;
+    --tv-escuro: #06100a;
+    --tv-antena: #4a8f66;
+    --tv-antena-sombra: #24513a;
+}
+
+.tv404-conjunto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.tv404-antena {
+    width: 5em;
+    height: 5em;
+    margin-bottom: -6em;
+    border-radius: 50%;
+    border: 2px solid var(--tv-escuro);
+    background-color: var(--tv-antena);
+    z-index: -1;
+}
+
+.tv404-antena-sombra {
+    position: absolute;
+    width: 50px;
+    height: 56px;
+    margin-left: 1.68em;
+    border-radius: 45%;
+    transform: rotate(140deg);
+    border: 4px solid transparent;
+    background-color: transparent;
+    box-shadow: inset 0 16px var(--tv-antena-sombra), inset 0 16px 1px 1px var(--tv-antena-sombra);
+}
+
+.tv404-antena::after {
+    content: "";
+    position: absolute;
+    margin-top: -9.4em;
+    margin-left: 0.4em;
+    transform: rotate(-25deg);
+    width: 1em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: var(--tv-antena-brilho);
+}
+
+.tv404-antena::before {
+    content: "";
+    position: absolute;
+    margin-top: 0.2em;
+    margin-left: 1.25em;
+    transform: rotate(-20deg);
+    width: 1.5em;
+    height: 0.8em;
+    border-radius: 50%;
+    background-color: var(--tv-antena-brilho);
+}
+
+.tv404-haste1 {
+    position: relative;
+    top: -102%;
+    left: -130%;
+    width: 12em;
+    height: 5.5em;
+    border-radius: 50px;
+    background-image: linear-gradient(#171717, #171717, #353535, #353535, #171717);
+    transform: rotate(-29deg);
+    clip-path: polygon(50% 0%, 49% 100%, 52% 100%);
+}
+
+.tv404-ponta1 {
+    position: relative;
+    top: -211%;
+    left: -35%;
+    transform: rotate(45deg);
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #979797;
+    z-index: 99;
+}
+
+.tv404-haste2 {
+    position: relative;
+    top: -210%;
+    left: -10%;
+    width: 12em;
+    height: 4em;
+    margin-right: 5em;
+    border-radius: 50px;
+    background-color: #171717;
+    background-image: linear-gradient(#171717, #171717, #353535, #353535, #171717);
+    clip-path: polygon(47% 0, 47% 0, 34% 34%, 54% 25%, 32% 100%, 29% 96%, 49% 32%, 30% 38%);
+    transform: rotate(-8deg);
+}
+
+.tv404-ponta2 {
+    position: relative;
+    top: -294%;
+    left: 94%;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #979797;
+    z-index: 99;
+}
+
+.tv404-aparelho {
+    display: flex;
+    justify-content: center;
+    width: 17em;
+    height: 9em;
+    margin-top: 3em;
+    border-radius: 15px;
+    border: 2px solid var(--tv-escuro);
+    background-color: var(--tv-corpo);
+    box-shadow: inset 0.2em 0.2em var(--tv-luz);
+}
+
+.tv404-aparelho::after {
+    content: "";
+    position: absolute;
+    width: 17em;
+    height: 9em;
+    border-radius: 15px;
+    background:
+        repeating-radial-gradient(var(--tv-corpo) 0 0.0001%, #00000070 0 0.0002%) 50% 0 / 2500px 2500px,
+        repeating-conic-gradient(var(--tv-corpo) 0 0.0001%, #00000070 0 0.0002%) 60% 60% / 2500px 2500px;
+    background-blend-mode: difference;
+    opacity: 0.09;
+}
+
+.tv404-curva-svg {
+    position: absolute;
+    margin-top: 0.25em;
+    margin-left: -0.25em;
+    height: 12px;
+    width: 12px;
+    fill: var(--tv-luz);
+}
+
+.tv404-visor {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 3.5px 3.5px 0 var(--tv-luz);
+}
+
+.tv404-tela-ext {
+    border-radius: 10px;
+}
+
+.tv404-tela-int {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11em;
+    height: 7.75em;
+    border-radius: 10px;
+}
+
+.tv404-tela-ruido {
+    width: 13em;
+    height: 7.85em;
+    border: 2px solid var(--tv-escuro);
+    background:
+        repeating-radial-gradient(#000 0 0.0001%, #ffffff 0 0.0002%) 50% 0 / 2500px 2500px,
+        repeating-conic-gradient(#000 0 0.0001%, #ffffff 0 0.0002%) 60% 60% / 2500px 2500px;
+    background-blend-mode: difference;
+    animation: tv404-ruido 0.4s infinite alternate;
+    border-radius: 10px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #252525;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.tv404-tela-cores {
+    position: relative;
+    width: 13em;
+    height: 7.85em;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: linear-gradient(to right,
+        #002fc6 0%, #002bb2 14.2857142857%, #3a3a3a 14.2857142857%, #303030 28.5714285714%,
+        #ff0afe 28.5714285714%, #f500f4 42.8571428571%, #6c6c6c 42.8571428571%, #626262 57.1428571429%,
+        #0affd9 57.1428571429%, #00f5ce 71.4285714286%, #3a3a3a 71.4285714286%, #303030 85.7142857143%,
+        white 85.7142857143%, #fafafa 100%);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #252525;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.tv404-tela-cores::before,
+.tv404-tela-cores::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.tv404-tela-cores::before {
+    top: 0;
+    height: 68.4782608696%;
+    background: linear-gradient(to right,
+        white 0%, #fafafa 14.2857142857%, #ffe60a 14.2857142857%, #f5dc00 28.5714285714%,
+        #0affd9 28.5714285714%, #00f5ce 42.8571428571%, #10ea00 42.8571428571%, #0ed600 57.1428571429%,
+        #ff0afe 57.1428571429%, #f500f4 71.4285714286%, #ed0014 71.4285714286%, #d90012 85.7142857143%,
+        #002fc6 85.7142857143%, #002bb2 100%);
+}
+
+.tv404-tela-cores::after {
+    bottom: 0;
+    height: 21.7391304348%;
+    background: linear-gradient(to right,
+        #006c6b 0%, #005857 16.6666666667%, white 16.6666666667%, #fafafa 33.3333333333%,
+        #001b75 33.3333333333%, #001761 50%, #6c6c6c 50%, #626262 66.6666666667%,
+        #929292 66.6666666667%, #888888 83.3333333333%, #3a3a3a 83.3333333333%, #303030 100%);
+}
+
+.tv404-texto {
+    position: relative;
+    z-index: 10;
+    padding: 0 0.3em;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.7em;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+@keyframes tv404-ruido {
+    100% {
+        background-position: 50% 0, 60% 50%;
+    }
+}
+
+.tv404-linhas {
+    display: flex;
+    align-self: flex-end;
+    column-gap: 0.1em;
+}
+
+.tv404-linha-1,
+.tv404-linha-3 {
+    width: 2px;
+    height: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 25px 25px 0 0;
+    background-color: #000;
+}
+
+.tv404-linha-2 {
+    flex-grow: 1;
+    width: 2px;
+    height: 1em;
+    border-radius: 25px 25px 0 0;
+    background-color: #000;
+}
+
+.tv404-painel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    row-gap: 0.75em;
+    width: 4.25em;
+    height: 8em;
+    padding: 0.6em;
+    border: 2px solid var(--tv-escuro);
+    border-radius: 10px;
+    background-color: var(--tv-luz);
+    box-shadow: 3px 3px 0 var(--tv-luz);
+}
+
+.tv404-botao-1,
+.tv404-botao-2 {
+    width: 1.65em;
+    height: 1.65em;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: var(--tv-botao);
+    box-shadow: inset 2px 2px 1px var(--tv-botao-luz), -2px 0 var(--tv-botao-sombra), -2px 0 0 1px #000;
+}
+
+.tv404-botao-1::before {
+    content: "";
+    position: absolute;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    transform: rotate(47deg);
+    border-radius: 5px;
+    width: 0.1em;
+    height: 0.4em;
+    background-color: #000;
+}
+
+.tv404-botao-1::after {
+    content: "";
+    position: absolute;
+    margin-top: 0.9em;
+    margin-left: 0.8em;
+    transform: rotate(47deg);
+    border-radius: 5px;
+    width: 0.1em;
+    height: 0.55em;
+    background-color: #000;
+}
+
+.tv404-botao-traco {
+    position: absolute;
+    margin-top: -0.1em;
+    margin-left: 0.65em;
+    transform: rotate(45deg);
+    width: 0.15em;
+    height: 1.5em;
+    background-color: #000;
+}
+
+.tv404-botao-2::before {
+    content: "";
+    position: absolute;
+    margin-top: 1.05em;
+    margin-left: 0.8em;
+    transform: rotate(-45deg);
+    border-radius: 5px;
+    width: 0.15em;
+    height: 0.4em;
+    background-color: #000;
+}
+
+.tv404-botao-2::after {
+    content: "";
+    position: absolute;
+    margin-top: -0.1em;
+    margin-left: 0.65em;
+    transform: rotate(-45deg);
+    width: 0.15em;
+    height: 1.5em;
+    background-color: #000;
+}
+
+.tv404-alto-falantes {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+
+.tv404-furos {
+    display: flex;
+    column-gap: 0.25em;
+}
+
+.tv404-furo {
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: var(--tv-botao);
+    box-shadow: inset 1.25px 1.25px 1px var(--tv-botao-luz);
+}
+
+.tv404-trilho {
+    width: auto;
+    height: 2px;
+    background-color: #171717;
+}
+
+.tv404-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8.7em;
+    width: 100%;
+}
+
+.tv404-pe-1,
+.tv404-pe-2 {
+    width: 2em;
+    height: 1em;
+    margin-top: -0.15em;
+    border: 2px solid #171717;
+    background-color: var(--tv-apoio);
+    z-index: -1;
+}
+
+.tv404-barra {
+    position: absolute;
+    width: 17.5em;
+    height: 0.15em;
+    margin-top: 0.8em;
+    background-color: #171717;
+}
+
+/* Número 404 ao fundo */
+.tv404-numero {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6em;
+    margin-bottom: 2em;
+    color: var(--destaque);
+    opacity: 0.22;
+    z-index: -5;
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tv404-digito {
+    transform: scaleY(24.5) scaleX(9);
+}
+
+@media (max-width: 395px) {
+    .tv404-numero {
+        column-gap: 4em;
+    }
+
+    .tv404-digito {
+        transform: scaleY(25) scaleX(8);
+    }
+}
+
+/* Computador: tela com ruído; celular/tablet: barras de cores */
+@media (max-width: 1024px) {
+    .tv404-tela-cores {
+        display: flex;
+    }
+
+    .tv404-tela-ruido {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    .tv404-tela-ruido {
+        display: flex;
+    }
+
+    .tv404-tela-cores {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .erro404-conteudo h1 {
+        font-size: 1.8rem;
+    }
+
+    .erro404-conteudo {
+        margin-top: -3rem;
+    }
+}

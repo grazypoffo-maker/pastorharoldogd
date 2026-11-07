@@ -1,0 +1,628 @@
+/* Página inicial */
+
+/* Cabeçalho */
+.gradiente-ui {
+    background: linear-gradient(60deg, var(--cabecalho-1) 0%, var(--cabecalho-2) 100%);
+}
+
+.header {
+    padding: 3rem 1rem;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px var(--sombra);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header-content {
+    text-align: center;
+    width: 100%;
+}
+
+.tema-toggle-host {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 5;
+}
+
+.logo-igreja {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px var(--sombra-forte);
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    transition: transform 0.4s var(--suave), box-shadow 0.4s ease;
+    animation: zoom-suave 0.9s var(--suave) 0.1s backwards;
+}
+
+.foto-pastor {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 4px solid var(--foto-borda);
+    box-shadow: 0 6px 25px var(--sombra-forte);
+    transition: transform 0.4s var(--suave), box-shadow 0.4s ease;
+    animation: zoom-suave 0.9s var(--suave) backwards;
+}
+
+.info-principal h1 {
+    font-size: 3rem;
+    color: var(--destaque);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.info-principal h2 {
+    font-size: 1.8rem;
+    color: var(--texto-sec);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.igreja-nome {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--destaque);
+    margin-bottom: 2rem;
+}
+
+.dados-pessoais {
+    background-color: var(--superficie-trans);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--sombra);
+    margin: 2rem auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.dados-pessoais p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    animation: entrada 0.6s var(--suave) backwards;
+    animation-delay: calc(0.6s + var(--i, 0) * 60ms);
+}
+
+.dados-pessoais p:nth-child(2) { --i: 1; }
+.dados-pessoais p:nth-child(3) { --i: 2; }
+.dados-pessoais p:nth-child(4) { --i: 3; }
+.dados-pessoais p:nth-child(5) { --i: 4; }
+.dados-pessoais p:nth-child(6) { --i: 5; }
+
+.dados-pessoais strong {
+    color: var(--destaque);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+@keyframes zoom-suave {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
+
+@media (hover: hover) {
+    .foto-pastor:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 30px var(--sombra-forte);
+    }
+
+    .logo-igreja:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Seções */
+.secao {
+    padding: 4rem 1rem;
+    background-color: var(--fundo);
+    transition: background-color 0.35s ease;
+}
+
+.secao--alt {
+    background-color: var(--fundo-alt);
+}
+
+.secao h3 {
+    font-size: 2.5rem;
+    color: var(--destaque);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.secao p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Cards da missão */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    position: relative;
+    display: grid;
+    border-radius: 15px;
+    border: 1px solid var(--borda);
+    border-top: 4px solid var(--destaque);
+    background: var(--superficie);
+    color: var(--texto);
+    box-shadow: 0 4px 20px var(--sombra);
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease,
+                box-shadow 0.4s ease, opacity 0.7s var(--suave), transform 0.7s var(--suave);
+}
+
+.info-card.is-aberto {
+    background: var(--card-aberto-bg);
+    color: #ffffff;
+    border-color: var(--card-aberto-bg);
+}
+
+.info-card__frente,
+.info-card__verso {
+    grid-area: 1 / 1;
+    padding: 1.75rem 1.5rem;
+    transition: opacity 0.4s ease, transform 0.4s var(--suave), visibility 0s linear 0s;
+}
+
+.info-card__frente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info-card__alternar {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+html:not(.js) .info-card__alternar {
+    display: none;
+}
+
+.info-card__titulo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--destaque);
+}
+
+.info-card__resumo {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--texto-sec);
+}
+
+.info-card__dica {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--destaque);
+}
+
+.info-card .info-card__texto {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.info-card__verso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.info-card__voltar {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.js .info-card__verso {
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(4deg) scale(0.96);
+    transition: opacity 0.4s ease, transform 0.4s var(--suave), visibility 0s linear 0.4s;
+}
+
+.js .info-card.is-aberto .info-card__verso {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+}
+
+.js .info-card.is-aberto .info-card__frente {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s var(--suave), visibility 0s linear 0.4s;
+}
+
+.js .info-card.is-aberto .info-card__dica,
+html:not(.js) .info-card__dica,
+html:not(.js) .info-card__voltar,
+.info-card:not(.is-aberto) .info-card__voltar {
+    display: none;
+}
+
+html:not(.js) .info-card {
+    cursor: default;
+}
+
+html:not(.js) .info-card__frente,
+html:not(.js) .info-card__verso {
+    grid-area: auto;
+}
+
+/* Credencial */
+.credencial-info {
+    background: var(--superficie);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--sombra);
+    margin-top: 2rem;
+}
+
+.credencial-info h4 {
+    color: var(--destaque);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.credencial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.credencial-grid p {
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.credencial-destaque {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-style: italic;
+    color: var(--texto-sec);
+    border-top: 2px solid var(--fundo-alt);
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+/* Contato */
+.secao.contato {
+    background: var(--contato-bg);
+    color: #ffffff;
+    text-align: center;
+}
+
+.contato h3 {
+    color: #ffffff;
+}
+
+.contato-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+/* Rodapé */
+.footer {
+    background: var(--rodape-bg);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Revelação ao rolar (só esconde com JavaScript ativo) */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--suave), transform 0.7s var(--suave);
+    transition-delay: calc(var(--i, 0) * 80ms);
+    will-change: opacity, transform;
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+}
+
+.js .info-card.reveal {
+    transition: opacity 0.7s var(--suave), transform 0.7s var(--suave),
+                background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    transition-delay: calc(var(--i, 0) * 80ms), calc(var(--i, 0) * 80ms), 0s, 0s, 0s, 0s;
+}
+
+.container > .reveal:nth-child(2) { --i: 1; }
+.container > .reveal:nth-child(3) { --i: 2; }
+.container > .reveal:nth-child(4) { --i: 3; }
+
+/* Tela de carregamento */
+.carregamento {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: radial-gradient(circle at 50% 40%, #2d5a3d 0%, #1e3d29 55%, #13261a 100%);
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0s linear 0.8s;
+}
+
+.carregando .carregamento {
+    display: flex;
+    animation: carregamento-seguranca 0.6s ease 11s forwards;
+}
+
+.carregamento.saindo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+html.bloqueado {
+    overflow: hidden;
+}
+
+@keyframes carregamento-seguranca {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loading-earth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.loading-earth__globo {
+    --agua: #3344c1;
+    position: relative;
+    width: 7.5em;
+    height: 7.5em;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid 0.15em #ffffff;
+    background-color: var(--agua);
+    box-shadow: inset 0 0.5em rgba(255, 255, 255, 0.25), inset 0 -0.5em rgba(0, 0, 0, 0.25);
+    animation: loading-earth-surgir 1s ease both;
+}
+
+.loading-earth__globo svg {
+    position: absolute;
+    width: 7em;
+    height: auto;
+}
+
+.loading-earth__globo svg:nth-child(1) {
+    bottom: -2em;
+    left: -2em;
+    animation: loading-earth-giro-1 5s infinite linear 0.75s;
+}
+
+.loading-earth__globo svg:nth-child(2) {
+    top: -3em;
+    left: -2em;
+    animation: loading-earth-giro-1 5s infinite linear;
+}
+
+.loading-earth__globo svg:nth-child(3) {
+    top: -2.5em;
+    left: 5em;
+    animation: loading-earth-giro-2 5s infinite linear;
+}
+
+.loading-earth__globo svg:nth-child(4) {
+    bottom: -2.2em;
+    left: 5em;
+    animation: loading-earth-giro-2 5s infinite linear 0.75s;
+}
+
+.loading-earth__texto {
+    max-width: 28em;
+    margin-top: 1.25rem;
+    font-size: 1em;
+    line-height: 1.4;
+    text-wrap: balance;
+}
+
+@keyframes loading-earth-surgir {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes loading-earth-giro-1 {
+    0% { left: -2em; opacity: 100%; transform: skewX(0deg) rotate(0deg); }
+    30% { left: -6em; opacity: 100%; transform: skewX(-25deg) rotate(25deg); }
+    31% { left: -6em; opacity: 0%; transform: skewX(-25deg) rotate(25deg); }
+    35% { left: 7em; opacity: 0%; transform: skewX(25deg) rotate(-25deg); }
+    45% { left: 7em; opacity: 100%; transform: skewX(25deg) rotate(-25deg); }
+    100% { left: -2em; opacity: 100%; transform: skewX(0deg) rotate(0deg); }
+}
+
+@keyframes loading-earth-giro-2 {
+    0% { left: 5em; opacity: 100%; transform: skewX(0deg) rotate(0deg); }
+    75% { left: -7em; opacity: 100%; transform: skewX(-25deg) rotate(25deg); }
+    76% { left: -7em; opacity: 0%; transform: skewX(-25deg) rotate(25deg); }
+    77% { left: 8em; opacity: 0%; transform: skewX(25deg) rotate(-25deg); }
+    80% { left: 8em; opacity: 100%; transform: skewX(25deg) rotate(-25deg); }
+    100% { left: 5em; opacity: 100%; transform: skewX(0deg) rotate(0deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .info-principal h1 {
+        font-size: 2.2rem;
+    }
+
+    .info-principal h2 {
+        font-size: 1.3rem;
+    }
+
+    .igreja-nome {
+        font-size: 1.1rem;
+    }
+
+    .dados-pessoais {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .credencial-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-button {
+        width: 250px;
+        text-align: center;
+    }
+
+    .secao {
+        padding: 2.5rem 1rem;
+    }
+
+    .secao h3 {
+        font-size: 2rem;
+    }
+
+    .secao p {
+        font-size: 1.1rem;
+    }
+
+    .credencial-info {
+        padding: 2rem 1rem;
+    }
+
+    .logo-igreja {
+        width: 90px;
+        height: 90px;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .tema-toggle-host {
+        top: 1rem;
+        left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5.5rem 1rem 2rem;
+        min-height: auto;
+    }
+
+    .info-principal h1 {
+        font-size: 1.8rem;
+    }
+
+    .dados-pessoais {
+        padding: 1rem;
+    }
+
+    .credencial-info {
+        padding: 1.5rem 1rem;
+    }
+
+    .logo-igreja {
+        width: 64px;
+        height: 64px;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .tema-toggle-host {
+        top: 0.75rem;
+        left: 0.75rem;
+    }
+
+    .tema-toggle {
+        font-size: 12px;
+    }
+
+    .info-card__titulo {
+        font-size: 1.4rem;
+    }
+}
+
+/* Menos movimento: mantém a mensagem e usa só um esmaecer simples */
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .carregamento.carregamento {
+        transition: opacity 0.4s ease, visibility 0s linear 0.4s !important;
+    }
+
+    .carregando .carregamento {
+        animation: carregamento-seguranca 0.4s ease 11s forwards !important;
+    }
+}
