@@ -1,6 +1,4 @@
-/* Página inicial */
-
-/* Cabeçalho */
+ Cabeçalho */
 .gradiente-ui {
     background: linear-gradient(60deg, var(--cabecalho-1) 0%, var(--cabecalho-2) 100%);
 }
@@ -534,95 +532,6 @@ html.bloqueado {
     }
 
     .nav-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-button {
-        width: 250px;
-        text-align: center;
-    }
-
-    .secao {
-        padding: 2.5rem 1rem;
-    }
-
-    .secao h3 {
-        font-size: 2rem;
-    }
-
-    .secao p {
-        font-size: 1.1rem;
-    }
-
-    .credencial-info {
-        padding: 2rem 1rem;
-    }
-
-    .logo-igreja {
-        width: 90px;
-        height: 90px;
-        top: 1rem;
-        right: 1rem;
-    }
-
-    .tema-toggle-host {
-        top: 1rem;
-        left: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 5.5rem 1rem 2rem;
-        min-height: auto;
-    }
-
-    .info-principal h1 {
-        font-size: 1.8rem;
-    }
-
-    .dados-pessoais {
-        padding: 1rem;
-    }
-
-    .credencial-info {
-        padding: 1.5rem 1rem;
-    }
-
-    .logo-igreja {
-        width: 64px;
-        height: 64px;
-        top: 0.75rem;
-        right: 0.75rem;
-    }
-
-    .tema-toggle-host {
-        top: 0.75rem;
-        left: 0.75rem;
-    }
-
-    .tema-toggle {
-        font-size: 12px;
-    }
-
-    .info-card__titulo {
-        font-size: 1.4rem;
-    }
-}
-
-/* Menos movimento: mantém a mensagem e usa só um esmaecer simples */
-@media (prefers-reduced-motion: reduce) {
-    .js .reveal {
-        opacity: 1;
-        transform: none;
-    }
-
-    .carregamento.carregamento {
-        transition: opacity 0.4s ease, visibility 0s linear 0.4s !important;
-    }
-
-    .carregando .carregamento {
-        animation: carregamento-seguranca 0.4s ease 11s forwards !important;
+        flex-
     }
 }
